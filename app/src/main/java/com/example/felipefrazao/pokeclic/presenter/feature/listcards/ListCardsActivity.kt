@@ -1,7 +1,6 @@
-package com.example.felipefrazao.pokeclic.presenter.listcards
+package com.example.felipefrazao.pokeclic.presenter.feature.listcards
 
 import android.app.AlertDialog
-import android.content.Intent
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
@@ -11,7 +10,6 @@ import android.view.MenuItem
 import android.view.View
 import com.example.felipefrazao.pokeclic.R
 import com.example.felipefrazao.pokeclic.domain.model.Card
-import com.example.felipefrazao.pokeclic.presenter.getCard.CardActivity
 import com.example.felipefrazao.pokeclic.presenter.intefaces.BasePresenter
 import com.example.felipefrazao.pokeclic.presenter.shared.BaseActivity
 import kotlinx.android.synthetic.main.activity_list_cards.*

@@ -10,7 +10,7 @@ interface CardClient {
     @GET("cards?count=20")
     fun listCards() : Observable<CardDao>
 
-    @GET("cards /{id}")
+    @GET("cards/{id}")
     fun getCard(@Path("id")id:String): Observable<CardDao>
 
 }

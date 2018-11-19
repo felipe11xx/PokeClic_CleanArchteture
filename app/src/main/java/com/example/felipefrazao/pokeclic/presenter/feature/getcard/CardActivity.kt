@@ -1,11 +1,10 @@
-package com.example.felipefrazao.pokeclic.presenter.getCard
+package com.example.felipefrazao.pokeclic.presenter.feature.getcard
 
 import android.app.AlertDialog
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.ContextThemeWrapper
 import android.view.View
-import android.widget.Toast
 import com.example.felipefrazao.pokeclic.R
 import com.example.felipefrazao.pokeclic.domain.model.Card
 import com.example.felipefrazao.pokeclic.presenter.intefaces.BasePresenter
@@ -14,7 +13,7 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_card.*
 import javax.inject.Inject
 
-class CardActivity: BaseActivity(),GetCard.View {
+class CardActivity: BaseActivity(), GetCard.View {
 
     @Inject lateinit var presenter: GetCard.Presenter
     var id = ""

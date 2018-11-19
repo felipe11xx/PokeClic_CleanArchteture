@@ -1,7 +1,7 @@
 package com.example.felipefrazao.pokeclic.presenter.di.module.presentation
 
-import com.example.felipefrazao.pokeclic.presenter.getCard.CardActivity
-import com.example.felipefrazao.pokeclic.presenter.listcards.ListCardsActivity
+import com.example.felipefrazao.pokeclic.presenter.feature.getcard.CardActivity
+import com.example.felipefrazao.pokeclic.presenter.feature.listcards.ListCardsActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -9,10 +9,12 @@ import dagger.android.ContributesAndroidInjector
 internal abstract class UiModule {
 
     @ContributesAndroidInjector
-    abstract fun contributeMainActivity(): ListCardsActivity
+    abstract fun contributeListCardsActivity(): ListCardsActivity
 
 
     @ContributesAndroidInjector
     abstract fun contributeCardActivity(): CardActivity
+
+
 
 }

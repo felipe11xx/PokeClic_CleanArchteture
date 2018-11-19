@@ -1,4 +1,4 @@
-package com.example.felipefrazao.pokeclic.presenter.listcards
+package com.example.felipefrazao.pokeclic.presenter.feature.listcards
 
 import android.content.Context
 import android.content.Intent
@@ -10,7 +10,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.example.felipefrazao.pokeclic.R
 import com.example.felipefrazao.pokeclic.domain.model.Card
-import com.example.felipefrazao.pokeclic.presenter.getCard.CardActivity
+import com.example.felipefrazao.pokeclic.presenter.feature.getcard.CardActivity
 
 class CardsAdpter(
 
@@ -21,7 +21,7 @@ class CardsAdpter(
 ) : RecyclerView.Adapter<CardsAdpter.ViewHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup, viewType: Int
-    ): CardsAdpter.ViewHolder {
+    ): ViewHolder {
 
         val v = LayoutInflater.from(context)
             .inflate(R.layout.iten_card, parent, false)

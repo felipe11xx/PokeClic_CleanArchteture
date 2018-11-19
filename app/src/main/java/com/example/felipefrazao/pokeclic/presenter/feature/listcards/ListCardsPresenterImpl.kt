@@ -1,10 +1,11 @@
-package com.example.felipefrazao.pokeclic.presenter.listcards
+package com.example.felipefrazao.pokeclic.presenter.feature.listcards
 
 import com.example.felipefrazao.pokeclic.domain.model.CardDao
 import io.reactivex.observers.DisposableObserver
 import javax.inject.Inject
 
-class ListCardsPresenterImpl @Inject constructor(private val listCards: com.example.felipefrazao.pokeclic.domain.usecase.ListCards): ListCards.Presenter{
+class ListCardsPresenterImpl @Inject constructor(private val listCards: com.example.felipefrazao.pokeclic.domain.usecase.ListCards):
+    ListCards.Presenter {
 
     private var listCardsView: ListCards.View? = null
     override fun getCards() {

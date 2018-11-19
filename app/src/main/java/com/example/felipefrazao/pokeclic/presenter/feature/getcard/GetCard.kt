@@ -1,23 +1,19 @@
-package com.example.felipefrazao.pokeclic.presenter.listcards
-
+package com.example.felipefrazao.pokeclic.presenter.feature.getcard
 
 import com.example.felipefrazao.pokeclic.domain.model.Card
 import com.example.felipefrazao.pokeclic.presenter.intefaces.BasePresenter
 import com.example.felipefrazao.pokeclic.presenter.intefaces.BaseView
 import com.example.felipefrazao.pokeclic.presenter.intefaces.LoadableResolution
 
+interface GetCard {
 
-interface ListCards {
-
-    interface Presenter : BasePresenter<View> {
-
-        fun getCards()
-
+    interface Presenter: BasePresenter<View>{
+        fun getCard(id:String)
     }
 
-    interface View: BaseView<Any?>, LoadableResolution {
+    interface View: BaseView<Any?>, LoadableResolution{
+        fun showCard(card:Card)
 
-        fun showCards(cards: List<Card>)
-
+        fun moreInfo(card: Card)
     }
 }

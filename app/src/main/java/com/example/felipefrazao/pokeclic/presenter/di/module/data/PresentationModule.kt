@@ -1,9 +1,9 @@
 package com.example.felipefrazao.pokeclic.presenter.di.module.data
 
-import com.example.felipefrazao.pokeclic.presenter.getCard.GetCard
-import com.example.felipefrazao.pokeclic.presenter.getCard.GetCardPresenterImpl
-import com.example.felipefrazao.pokeclic.presenter.listcards.ListCards
-import com.example.felipefrazao.pokeclic.presenter.listcards.ListCardsPresenterImpl
+import com.example.felipefrazao.pokeclic.presenter.feature.getcard.GetCard
+import com.example.felipefrazao.pokeclic.presenter.feature.getcard.GetCardPresenterImpl
+import com.example.felipefrazao.pokeclic.presenter.feature.listcards.ListCards
+import com.example.felipefrazao.pokeclic.presenter.feature.listcards.ListCardsPresenterImpl
 import dagger.Module
 import dagger.Provides
 

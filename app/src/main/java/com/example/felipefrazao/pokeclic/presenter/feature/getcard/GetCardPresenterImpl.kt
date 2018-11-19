@@ -1,15 +1,16 @@
-package com.example.felipefrazao.pokeclic.presenter.getCard
+package com.example.felipefrazao.pokeclic.presenter.feature.getcard
 
 import com.example.felipefrazao.pokeclic.domain.model.CardDao
 import com.example.felipefrazao.pokeclic.domain.usecase.GetCard
 import io.reactivex.observers.DisposableObserver
 import javax.inject.Inject
 
-class GetCardPresenterImpl @Inject constructor(private val getCard: GetCard):com.example.felipefrazao.pokeclic.presenter.getCard.GetCard.Presenter {
+class GetCardPresenterImpl @Inject constructor(private val getCard: GetCard):
+    com.example.felipefrazao.pokeclic.presenter.feature.getcard.GetCard.Presenter {
 
-    private var getCardView: com.example.felipefrazao.pokeclic.presenter.getCard.GetCard.View? = null
+    private var getCardView: com.example.felipefrazao.pokeclic.presenter.feature.getcard.GetCard.View? = null
 
-    override fun onViewAttached(view: com.example.felipefrazao.pokeclic.presenter.getCard.GetCard.View) {
+    override fun onViewAttached(view: com.example.felipefrazao.pokeclic.presenter.feature.getcard.GetCard.View) {
        this.getCardView = view
     }
 

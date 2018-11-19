@@ -1,8 +1,10 @@
 package br.com.ciclic.presentation.di.module.data
 
 import com.example.felipefrazao.pokeclic.data.repository.CardRepositoryImpl
+import com.example.felipefrazao.pokeclic.data.repository.SetRepositoryImpl
 import com.example.felipefrazao.pokeclic.data.repository.retrofit.CardClient
 import com.example.felipefrazao.pokeclic.domain.repository.CardRepository
+import com.example.felipefrazao.pokeclic.domain.repository.SetRepository
 
 import dagger.Module
 import dagger.Provides
@@ -17,5 +19,9 @@ class DataModule {
         return cardRepository
     }
 
+    @Provides
+    fun provideSetRepository(setRepository: SetRepositoryImpl):SetRepository{
+        return setRepository
+    }
 
 }
