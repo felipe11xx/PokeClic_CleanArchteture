@@ -11,10 +11,10 @@ class ListCards @Inject constructor(
     private val cardRepository: CardRepository,
     threadExecutor: ThreadExecutor,
     postExecutionThread: PostExecutionThread
-) : UseCaseObservable.WithoutParam<CardDao>(threadExecutor, postExecutionThread) {
+) : UseCaseObservable.WithParam<CardDao, String>(threadExecutor, postExecutionThread) {
 
-    override fun buildUseCaseObservable(): Observable<CardDao> {
-        return cardRepository.listCards()
+    override fun buildUseCaseObservable(params:String): Observable<CardDao> {
+        return cardRepository.listCards(params)
     }
 
 }

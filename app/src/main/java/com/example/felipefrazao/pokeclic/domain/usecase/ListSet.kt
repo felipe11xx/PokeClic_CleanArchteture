@@ -13,7 +13,10 @@ class ListSet @Inject constructor(
     postExecutionThread: PostExecutionThread
 ) : UseCaseObservable.WithoutParam<SetDao>(threadExecutor,postExecutionThread){
     override fun buildUseCaseObservable(): Observable<SetDao> {
-        return setRepository.listSets()
+        return setRepository.listSets().map {
+            it.reversedSets()
+            it
+        }
     }
 
 }

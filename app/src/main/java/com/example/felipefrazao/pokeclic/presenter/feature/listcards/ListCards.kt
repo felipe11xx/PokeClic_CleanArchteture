@@ -11,7 +11,7 @@ interface ListCards {
 
     interface Presenter : BasePresenter<View> {
 
-        fun getCards()
+        fun getCards(setCode:String)
 
     }
 

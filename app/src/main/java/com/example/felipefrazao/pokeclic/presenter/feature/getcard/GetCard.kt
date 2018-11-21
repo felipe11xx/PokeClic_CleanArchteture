@@ -8,12 +8,16 @@ import com.example.felipefrazao.pokeclic.presenter.intefaces.LoadableResolution
 interface GetCard {
 
     interface Presenter: BasePresenter<View>{
+
         fun getCard(id:String)
+
+
+        fun onClicked(card:Card)
     }
 
     interface View: BaseView<Any?>, LoadableResolution{
         fun showCard(card:Card)
 
-        fun moreInfo(card: Card)
+        fun showMoreInfo(msg:String,cardNameFmt:String)
     }
 }

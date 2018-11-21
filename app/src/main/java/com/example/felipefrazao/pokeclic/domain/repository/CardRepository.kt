@@ -5,7 +5,7 @@ import io.reactivex.Observable
 
 interface CardRepository {
 
-    fun listCards() : Observable<CardDao>
+    fun listCards(setCode:String) : Observable<CardDao>
 
     fun getCard(id:String): Observable<CardDao>
 }

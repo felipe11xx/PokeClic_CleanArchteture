@@ -15,6 +15,7 @@ import javax.inject.Inject
 
 class CardActivity: BaseActivity(), GetCard.View {
 
+
     @Inject lateinit var presenter: GetCard.Presenter
     var id = ""
 
@@ -39,7 +40,7 @@ class CardActivity: BaseActivity(), GetCard.View {
         //Toast.makeText(this,card.name, Toast.LENGTH_LONG).show()
 
         btn_more_info.setOnClickListener {
-            moreInfo(card)
+            presenter.onClicked(card)
         }
 
         img_voltar.setOnClickListener {
@@ -47,21 +48,11 @@ class CardActivity: BaseActivity(), GetCard.View {
         }
     }
 
+    override fun showMoreInfo( message:String, cardNameFmt: String) {
 
-    override fun moreInfo(card: Card) {
-
-        val msg: String
-        if (card.supertype.equals("Pokémon")) {
-            msg = ("Esse Pokémon possui " + card.hp + " de HP e seu número da pokédex é "
-                    + card.nationalPokedexNumber + ".")
-        } else if (card.supertype.equals("Trainer")) {
-            msg = card.text.get(0)
-        } else {
-            msg = card.name
-        }
         val builder = AlertDialog.Builder(ContextThemeWrapper(this,R.style.myDialog))
-        builder.setMessage(msg)
-            .setTitle(card.name.replace("-EX","").replace("ex",""))
+        builder.setMessage(message)
+            .setTitle(cardNameFmt)
         // Cria botão ok
         builder.setPositiveButton("ok", null)
         val dialog = builder.create()
@@ -69,7 +60,6 @@ class CardActivity: BaseActivity(), GetCard.View {
         dialog.show()
         dialog.getWindow().setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.colorWhite)))
     }
-
 
 
     override fun showLoading() {

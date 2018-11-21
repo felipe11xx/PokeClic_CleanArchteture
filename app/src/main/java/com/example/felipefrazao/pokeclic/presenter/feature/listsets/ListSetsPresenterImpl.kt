@@ -1,5 +1,7 @@
 package com.example.felipefrazao.pokeclic.presenter.feature.listsets
 
+import android.widget.Toast
+import com.example.felipefrazao.pokeclic.R
 import com.example.felipefrazao.pokeclic.domain.model.SetDao
 import com.example.felipefrazao.pokeclic.domain.usecase.ListSet
 import io.reactivex.observers.DisposableObserver
@@ -36,6 +38,7 @@ class ListSetsPresenterImpl @Inject constructor(private val listSets: ListSet):L
         }
 
         override fun onError(e: Throwable?) {
+            //Toast.makeText(,R.string.falha.toString(),Toast.LENGTH_LONG).show()
             listSetsView?.hideLoading()
         }
 

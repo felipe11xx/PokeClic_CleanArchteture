@@ -1,5 +1,9 @@
 package com.example.felipefrazao.pokeclic.domain.model
 
+enum class retreatCoast{
+    Colorless,Teste,Teste2,Teste3
+}
+
 class Card (
     val id: String,
     val name: String,
@@ -12,7 +16,7 @@ class Card (
     val evolvesFrom: String,
     val ability: Ability,
     val hp: String,
-    val retreatCoast: List<String>,
+    val retreatCoast: List<retreatCoast>,
     val number: String,
     val convertedRetreatCoaast: Int,
     val artist: String,

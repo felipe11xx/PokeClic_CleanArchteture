@@ -8,9 +8,9 @@ class ListCardsPresenterImpl @Inject constructor(private val listCards: com.exam
     ListCards.Presenter {
 
     private var listCardsView: ListCards.View? = null
-    override fun getCards() {
+    override fun getCards(setCode:String) {
         listCardsView?.showLoading()
-        listCards.execute(ListCardsListener())
+        listCards.execute(setCode,ListCardsListener())
     }
 
     override fun onViewAttached(view: ListCards.View) {

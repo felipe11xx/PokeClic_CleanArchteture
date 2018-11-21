@@ -8,8 +8,8 @@ import javax.inject.Inject
 
 class CardRepositoryImpl @Inject constructor(private val cardClient: CardClient) : CardRepository{
 
-    override fun listCards(): Observable<CardDao> {
-        return cardClient.listCards()
+    override fun listCards(setCode:String): Observable<CardDao> {
+        return cardClient.listCards(setCode)
     }
 
     override fun getCard(id: String): Observable<CardDao> {
