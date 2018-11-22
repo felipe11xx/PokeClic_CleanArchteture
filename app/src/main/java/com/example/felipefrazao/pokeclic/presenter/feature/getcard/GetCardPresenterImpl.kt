@@ -1,5 +1,6 @@
 package com.example.felipefrazao.pokeclic.presenter.feature.getcard
 
+import com.example.felipefrazao.pokeclic.data.entity.CardDaoEntity
 import com.example.felipefrazao.pokeclic.domain.model.Card
 import com.example.felipefrazao.pokeclic.domain.model.CardDao
 import com.example.felipefrazao.pokeclic.domain.usecase.GetCard
@@ -32,7 +33,7 @@ class GetCardPresenterImpl @Inject constructor(private val getCard: GetCard):
     }
 
     private fun fmtCardName(card: Card): String =
-        card.name.replace("-EX","").replace("ex","")
+        card.name?.replace("-EX","")?.replace("ex","")!!
 
 
     private fun fmtMoreInfo(card: Card):String {
@@ -41,9 +42,9 @@ class GetCardPresenterImpl @Inject constructor(private val getCard: GetCard):
             msg = ("Esse Pokémon possui " + card.hp + " de HP e seu número da pokédex é "
                     + card.nationalPokedexNumber + ".")
         } else if (card.supertype.equals("Trainer")) {
-            msg = card.text.get(0)
+            msg = card.text?.get(0)!!
         } else {
-            msg = card.name
+            msg = card.name!!
         }
         return msg
     }
@@ -54,13 +55,13 @@ class GetCardPresenterImpl @Inject constructor(private val getCard: GetCard):
     }
 
 
-    private inner class GetCardListener: DisposableObserver<CardDao>() {
+    private inner class GetCardListener: DisposableObserver<CardDaoEntity>() {
         override fun onComplete() {
 
         }
 
-        override fun onNext(value: CardDao?) {
-            getCardView?.showCard(value!!.card)
+        override fun onNext(value: CardDaoEntity?) {
+            getCardView?.showCard(value!!.card?.transform()!!)
             getCardView?.hideLoading()
 
         }

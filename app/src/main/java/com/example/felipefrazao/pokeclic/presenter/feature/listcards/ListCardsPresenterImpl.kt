@@ -1,5 +1,6 @@
 package com.example.felipefrazao.pokeclic.presenter.feature.listcards
 
+import com.example.felipefrazao.pokeclic.data.entity.CardDaoEntity
 import com.example.felipefrazao.pokeclic.domain.model.CardDao
 import io.reactivex.observers.DisposableObserver
 import javax.inject.Inject
@@ -25,13 +26,13 @@ class ListCardsPresenterImpl @Inject constructor(private val listCards: com.exam
         listCards.dispose()
     }
 
-   private inner class ListCardsListener: DisposableObserver<CardDao>() {
+   private inner class ListCardsListener: DisposableObserver<CardDaoEntity>() {
        override fun onComplete() {
 
        }
 
-       override fun onNext(value: CardDao) {
-           listCardsView?.showCards(value.cards)
+       override fun onNext(value: CardDaoEntity) {
+           listCardsView?.showCards(value.transform()?.cards!!)
            listCardsView?.hideLoading()
        }
 
