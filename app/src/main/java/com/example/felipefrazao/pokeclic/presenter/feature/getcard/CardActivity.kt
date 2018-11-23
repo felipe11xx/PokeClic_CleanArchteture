@@ -1,6 +1,7 @@
 package com.example.felipefrazao.pokeclic.presenter.feature.getcard
 
 import android.app.AlertDialog
+import android.graphics.Typeface
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.ContextThemeWrapper
@@ -11,6 +12,7 @@ import com.example.felipefrazao.pokeclic.presenter.intefaces.BasePresenter
 import com.example.felipefrazao.pokeclic.presenter.shared.BaseActivity
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_card.*
+import kotlinx.android.synthetic.main.menu.*
 import javax.inject.Inject
 
 class CardActivity: BaseActivity(), GetCard.View {
@@ -43,7 +45,7 @@ class CardActivity: BaseActivity(), GetCard.View {
             presenter.onClicked(card)
         }
 
-        img_voltar.setOnClickListener {
+        btn_back.setOnClickListener {
             finish()
         }
     }
@@ -66,6 +68,9 @@ class CardActivity: BaseActivity(), GetCard.View {
         btn_more_info.visibility = View.GONE
         img_card.visibility = View.GONE
         pgr_card.visibility = View.VISIBLE
+
+        val typeface = Typeface.createFromAsset(assets,"fonts/Pokemon Hollow.ttf")
+        tlb_app_name.setTypeface(typeface)
     }
 
     override fun hideLoading() {

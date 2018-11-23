@@ -8,7 +8,7 @@ class CardDaoEntity (
     var card: CardEntity?
 ):Transform<CardDao>{
     override fun transform(): CardDao {
-        return CardDao(cards?.map { it.transform() }
+        return CardDao(cards?.map { it.transform() }?.sortedBy { it.number?.toDoubleOrNull() }
             ,card?.transform())
     }
 

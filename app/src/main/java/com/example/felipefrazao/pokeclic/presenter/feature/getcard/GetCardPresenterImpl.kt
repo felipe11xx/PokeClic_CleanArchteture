@@ -32,6 +32,7 @@ class GetCardPresenterImpl @Inject constructor(private val getCard: GetCard):
 
     }
 
+
     private fun fmtCardName(card: Card): String =
         card.name?.replace("-EX","")?.replace("ex","")!!
 

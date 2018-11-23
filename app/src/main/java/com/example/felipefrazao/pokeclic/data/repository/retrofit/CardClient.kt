@@ -1,7 +1,6 @@
 package com.example.felipefrazao.pokeclic.data.repository.retrofit
 
 import com.example.felipefrazao.pokeclic.data.entity.CardDaoEntity
-import com.example.felipefrazao.pokeclic.domain.model.CardDao
 import retrofit2.http.GET
 import io.reactivex.Observable
 import retrofit2.http.Path

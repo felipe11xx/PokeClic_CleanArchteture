@@ -61,7 +61,7 @@ class SetsAdapter(private val context: Context,
             tvReleaseDate.text = set.releaseDate
             tvDateLabel.text = context.getString(R.string.dateLabel)
             tvAmoCards.text = context.getString(R.string.cardsAmountLabel)
-            setCode = set.code
+            setCode = set?.code!!
 
         }
 

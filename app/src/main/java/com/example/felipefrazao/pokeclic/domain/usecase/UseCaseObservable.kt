@@ -2,6 +2,7 @@ package com.example.felipefrazao.pokeclic.domain.usecase
 
 import com.example.felipefrazao.pokeclic.domain.shared.PostExecutionThread
 import com.example.felipefrazao.pokeclic.domain.shared.ThreadExecutor
+import com.example.felipefrazao.pokeclic.presenter.feature.listsets.ListSetsPresenterImpl
 import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable

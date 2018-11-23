@@ -1,5 +1,6 @@
 package com.example.felipefrazao.pokeclic.presenter.feature.listsets
 
+import android.graphics.Typeface
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
@@ -8,6 +9,7 @@ import com.example.felipefrazao.pokeclic.domain.model.Set
 import com.example.felipefrazao.pokeclic.presenter.intefaces.BasePresenter
 import com.example.felipefrazao.pokeclic.presenter.shared.BaseActivity
 import kotlinx.android.synthetic.main.activity_list_sets.*
+import kotlinx.android.synthetic.main.menu.*
 import javax.inject.Inject
 
 class ListSetsActivity: BaseActivity(), ListSets.View {
@@ -32,10 +34,16 @@ class ListSetsActivity: BaseActivity(), ListSets.View {
 
         var adapter = SetsAdapter(this, sets)
         rv_sets.adapter = adapter
+
+
+
     }
 
     override fun showLoading() {
         prg_sets.visibility = View.VISIBLE
+        btn_back.visibility = View.GONE
+        val typeface = Typeface.createFromAsset(assets,"fonts/Pokemon Hollow.ttf")
+        tlb_app_name.setTypeface(typeface)
     }
 
     override fun hideLoading() {

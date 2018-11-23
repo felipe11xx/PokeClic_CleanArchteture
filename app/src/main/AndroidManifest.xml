@@ -24,6 +24,7 @@
         </activity>
         <activity
                 android:name=".presenter.feature.listcards.ListCardsActivity"
+                android:theme="@style/AppTheme.NoActionBar"
                 android:screenOrientation="portrait">
 
         </activity>
@@ -35,6 +36,7 @@
         </activity>
 
         <activity android:name=".presenter.feature.listsets.ListSetsActivity"
+                  android:theme="@style/AppTheme.NoActionBar"
                   android:screenOrientation="portrait"  >
 
         </activity>

@@ -14,13 +14,14 @@ import com.example.felipefrazao.pokeclic.domain.model.Card
 import com.example.felipefrazao.pokeclic.domain.model.RetreatCost
 import com.squareup.picasso.Picasso
 
-class CardsAdpter(
+
+class CardsAdapter(
 
     private val context: Context,
     private val cards: List<Card>,
     private val onItemClick: (cardId:String) -> Unit
 
-) : RecyclerView.Adapter<CardsAdpter.ViewHolder>() {
+) : RecyclerView.Adapter<CardsAdapter.ViewHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup, viewType: Int
     ): ViewHolder {
@@ -48,12 +49,6 @@ class CardsAdpter(
         var imgCard: ImageView
         var viewGroupRetreatCost: LinearLayout
 
-      /*  var imgEnergy1: ImageView
-        var imgEnergy2: ImageView
-        var imgEnergy3: ImageView
-        var imgEnergy4: ImageView
-        var imgEnergy5: ImageView*/
-
         var cardId: String = ""
 
         init {
@@ -64,17 +59,12 @@ class CardsAdpter(
             imgCard = itemView.findViewById(R.id.img_card)
             viewGroupRetreatCost = itemView.findViewById(R.id.viewGroupRetreatCost)
 
-          /*  imgEnergy1 = itemView.findViewById(R.id.img_retreat_1)
-            imgEnergy2 = itemView.findViewById(R.id.img_retreat_2)
-            imgEnergy3 = itemView.findViewById(R.id.img_retreat_3)
-            imgEnergy4 = itemView.findViewById(R.id.img_retreat_4)
-            imgEnergy5 = itemView.findViewById(R.id.img_retreat_5)*/
-
             itemView.setOnClickListener(this)
         }
 
         fun preencher(card: Card) {
 
+            viewGroupRetreatCost.removeAllViews()
             card.retreatCost?.forEach {
 
                 val viewGroup = LayoutInflater.from(context)
@@ -97,16 +87,16 @@ class CardsAdpter(
                 viewGroupRetreatCost.addView(viewGroup)
             }
 
-            // for  retreacost :  listRetreatcost
-               //when(retreacost)
-//                    imageView.setre
-                    //viewGroupRetreatCost.addView(image)
-                //
-            //
+
             tvCard.text = card.name
             Picasso.with(context).load(card.imageUrl).into(imgCard)
-            tvCardSet.text =  card.set
+            tvCardSet.text = "Set: " + card.set
             tvSetNum.text = "Numero: " + card.number
+            if(!card.supertype.equals("Pokémon")){
+                tvRetreat.visibility = View.GONE
+            }else{
+                tvRetreat.visibility = View.VISIBLE
+            }
 
             cardId = card.id!!
         }

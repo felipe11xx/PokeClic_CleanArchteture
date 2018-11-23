@@ -1,8 +1,6 @@
 package com.example.felipefrazao.pokeclic.presenter.feature.listsets
 
-import android.widget.Toast
-import com.example.felipefrazao.pokeclic.R
-import com.example.felipefrazao.pokeclic.domain.model.SetDao
+import com.example.felipefrazao.pokeclic.data.entity.SetDaoEntity
 import com.example.felipefrazao.pokeclic.domain.usecase.ListSet
 import io.reactivex.observers.DisposableObserver
 import javax.inject.Inject
@@ -27,13 +25,13 @@ class ListSetsPresenterImpl @Inject constructor(private val listSets: ListSet):L
        listSets.dispose()
     }
 
-    private inner class ListSetListener : DisposableObserver<SetDao>(){
+    private inner class ListSetListener : DisposableObserver<SetDaoEntity>(){
         override fun onComplete() {
 
         }
 
-        override fun onNext(value: SetDao?) {
-            listSetsView?.showSets(value!!.sets)
+        override fun onNext(value: SetDaoEntity?) {
+            listSetsView?.showSets(value?.transform()?.sets!!)
             listSetsView?.hideLoading()
         }
 
