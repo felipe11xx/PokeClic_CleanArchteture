@@ -5,10 +5,12 @@
     <string name="moreInfo">MORE INFO</string>
     <string name="title_activity_card">CardActivity</string>
     <string name="sair">Sair</string>
-    <string name="deckBuilder">Deck Builder</string>
     <string name="dateLabel">Data de lançamento: </string>
     <string name="cardsAmountLabel">Qtd. Cards: </string>
     <string name="setLabel">Coleção</string>
     <string name="retreat">Recuo: </string>
     <string name="setNum">Numero na coleção:</string>
+    <string name="trainer">Trenador</string>
+    <string name="pokemon">Pokémon</string>
+    <string name="energy">Energia</string>
 </resources>
