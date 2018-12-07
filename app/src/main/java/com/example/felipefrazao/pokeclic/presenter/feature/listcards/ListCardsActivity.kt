@@ -18,6 +18,7 @@ class ListCardsActivity : BaseActivity(), ListCards.View {
 
     @Inject
     lateinit var presenter: ListCards.Presenter
+    //lateinit private var mSectionPageAdapter : SectionsPagerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,24 +36,24 @@ class ListCardsActivity : BaseActivity(), ListCards.View {
 
     override fun showCards(cards: List<Card>) {
         val mLayoutManager = LinearLayoutManager(baseContext)
-        rv_pokes.layoutManager = mLayoutManager
+        //rv_pokes.layoutManager = mLayoutManager
         val adpter = CardsAdapter(baseContext, cards) {cardId  ->
             var intent  = Intent(this, CardActivity::class.java)
             intent.putExtra("CardId", cardId)
             startActivity(intent)
         }
-        rv_pokes.adapter = adpter
+       // rv_pokes.adapter = adpter
 
     }
 
     override fun showLoading() {
-        pgr_list_card.visibility = View.VISIBLE
+       // pgr_list_card.visibility = View.VISIBLE
         val typeface = Typeface.createFromAsset(assets,"fonts/Pokemon Hollow.ttf")
         tlb_app_name.setTypeface(typeface)
     }
 
     override fun hideLoading() {
-        pgr_list_card.visibility = View.INVISIBLE
+       // pgr_list_card.visibility = View.INVISIBLE
     }
 
 
